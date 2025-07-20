@@ -122,6 +122,26 @@ ageInput.addEventListener("input", function () {
     this.value = 100;
   }
 });
+// prevent numeric number from entering the input name form
+nameInput.addEventListener("keydown", function (event) {
+  let key = event.key;
+
+  // Allow letters only (A–Z and a–z)
+  let isLetter = /^[a-zA-Z]$/.test(key);
+
+  // Allow spacebar
+  let isSpace = key === " ";
+
+  // Allow Backspace and Delete
+  let isControl = key === "Backspace" || key === "Delete";
+
+  // If not a letter, space, or control key → block it
+  if (!isLetter && !isSpace && !isControl) {
+    event.preventDefault();
+  }
+});
+
+//
 
 // prevent non numeric from typing
 
