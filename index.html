@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main Form Section -->
+      <div class="form-card">
+        <h2>🎓 Grade Checker</h2>
+        <form id="userForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="age">Your Score:</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              min="1"
+              max="105"
+              placeholder="Enter your age"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Check Grade</button>
+        </form>
+
+        <!-- Student Info Display Section (Hidden by default) -->
+        <div class="user-info-card" id="userInfoCard">
+          <div class="info-content">
+            <p><span id="displayName"></span></p>
+            <p><strong></strong> <span id="displayAge"></span></p>
+            <p id="gradeMessage"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
